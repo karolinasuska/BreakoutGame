@@ -11,7 +11,9 @@
 
 #include <SDL2/SDL.h>
 #include <iostream>
-#include <memory>
+#include <cassert>
+
+
 
 App& App::Singleton()
 {
@@ -24,6 +26,11 @@ App& App::Singleton()
 bool App::Init(uint32_t width, uint32_t height, uint32_t mag)
 {
 	mnoptrWindow = mScreen.Init(width, height, mag);
+
+	std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
+
+	PushScene(std::move(arcadeScene));
+
 	return mnoptrWindow != nullptr;
 }
 
@@ -43,9 +50,7 @@ void App::Run()
 		uint32_t dt = 10;
 		uint32_t accumulator = 0;
 
-		std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
 
-		arcadeScene -> Init();
 
 		while(running)
 		{
@@ -72,20 +77,67 @@ void App::Run()
 				}
 			}
 
-			//Update
-			while(accumulator >=dt)
+			Scene* topScene = App::TopScene();
+			assert(topScene && "Why don't we have a scene?");
+
+			if(topScene)
 			{
-				//update current scene by dt
-				arcadeScene -> Update(dt);
-				std::cout << "Delta time step: " <<dt << std::endl;
-				accumulator -= dt;
+				//Update
+				while(accumulator >=dt)
+				{
+					//update current scene by dt
+					topScene -> Update(dt);
+					std::cout << "Delta time step: " <<dt << std::endl;
+					accumulator -= dt;
+				}
+
+				//Render
+				topScene -> Draw(mScreen);
 			}
 
-			//Render
-
-			arcadeScene -> Draw(mScreen);
 			mScreen.SwapScreens();
 		}
 	}
+}
+
+
+
+
+void App::PushScene(std::unique_ptr<Scene> scene)
+{
+	assert(scene && "Don't push nullptr");
+	if(scene)
+	{
+		scene -> Init();
+		mSceneStack.emplace_back(std::move(scene));
+		SDL_SetWindowTitle(mnoptrWindow, TopScene() -> GetSceneName().c_str());
+	}
+}
+
+
+
+void App::PopScene()
+{
+	if(mSceneStack.size() > 1)
+	{
+		mSceneStack.pop_back();
+	}
+
+	if(TopScene())
+	{
+		SDL_SetWindowTitle(mnoptrWindow, TopScene() -> GetSceneName().c_str());
+	}
+
+}
+
+
+Scene* App::TopScene()
+{
+	if(mSceneStack.empty())
+	{
+		return nullptr;
+	}
+
+	return mSceneStack.back().get();
 }
 
