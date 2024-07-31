@@ -45,6 +45,7 @@
 								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.macosx.exe.debug.option.debugging.level.177410568" name="Debug Level" superClass="gnu.cpp.compiler.macosx.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.145018478" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/homebrew/opt/sdl2/include"/>
+									<listOptionValue builtIn="false" value="/Users/karolina/EclipseProjects/ArcadeGameApp/src/Input"/>
 									<listOptionValue builtIn="false" value="/Users/karolina/EclipseProjects/ArcadeGameApp/src/Scenes"/>
 									<listOptionValue builtIn="false" value="/Users/karolina/EclipseProjects/ArcadeGameApp/src/App"/>
 									<listOptionValue builtIn="false" value="/Users/karolina/EclipseProjects/ArcadeGameApp/src/Shapes"/>
