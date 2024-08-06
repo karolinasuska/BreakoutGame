@@ -10,6 +10,7 @@
 
 #include "Screen.h"
 #include "Scene.h"
+#include "InputController.h"
 
 #include <stdint.h>
 #include <vector>
@@ -40,6 +41,7 @@ private:
 	SDL_Window * mnoptrWindow;
 
 	std::vector<std::unique_ptr<Scene>> mSceneStack;
+	InputController mInputController;
 };
 
 #endif /* APP_APP_H_ */
