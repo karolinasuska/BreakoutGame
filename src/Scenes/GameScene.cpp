@@ -1,0 +1,36 @@
+/*
+ * GameScene.cpp
+ *
+ *  Created on: Aug 6, 2024
+ *      Author: karolina
+ */
+
+#include "GameScene.h"
+
+GameScene::GameScene(std::unique_ptr<Game> optrGame): mGame(std::move(optrGame))
+{
+
+}
+
+void GameScene::Init()
+{
+	mGame -> Init(mGameController);
+}
+
+void GameScene::Update(uint32_t dt)
+{
+	mGame -> Update(dt);
+}
+
+void GameScene::Draw(Screen& screen)
+{
+	mGame -> Draw(screen);
+}
+
+const std::string& GameScene::GetSceneName() const
+{
+	static std::string name = "";
+	return name;
+}
+
+
