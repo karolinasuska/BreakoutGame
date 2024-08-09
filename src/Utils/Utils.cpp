@@ -15,7 +15,7 @@ bool IsEqual(float x, float y)
 	return fabsf(x - y) < EPSILON;
 }
 
-bool IGreaterThanOrEqual(float x, float y)
+bool IsGreaterThanOrEqual(float x, float y)
 {
 	return x > y || IsEqual(x,y);
 }
@@ -23,4 +23,9 @@ bool IGreaterThanOrEqual(float x, float y)
 bool IsLessThanOrEqual(float x, float y)
 {
 	return x < y || IsEqual(x,y);
+}
+
+float MilisecondsToSeconds(unsigned int miliseconds)
+{
+	return static_cast<float>(miliseconds) / 1000.0f;
 }
