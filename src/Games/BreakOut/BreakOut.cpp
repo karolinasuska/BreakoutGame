@@ -85,6 +85,7 @@ void BreakOut::Init(GameController& controller)
 
 void BreakOut::Update(uint32_t dt)
 {
+	mBall.Update(dt);
 	mPaddle.Update(dt);
 }
 
@@ -92,14 +93,16 @@ void BreakOut::Update(uint32_t dt)
 
 void BreakOut::Draw(Screen& screen)
 {
+	mBall.Draw(screen);
 	mPaddle.Draw(screen);
 }
 
 
 
-std::string BreakOut::GetName() const
+const std::string& BreakOut::GetName() const
 {
-	return "Break Out!";
+	static std::string name = "Break Out!";
+	return name;
 }
 
 void BreakOut::ResetGame()
@@ -108,6 +111,7 @@ void BreakOut::ResetGame()
 	AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
 
 	mPaddle.Init(paddleRect, levelBoundary);
+	mBall.MoveTo(Vec2D(App::Singleton().Width()/2, App::Singleton().Height()/2));
 }
 
 
