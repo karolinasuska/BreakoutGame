@@ -14,6 +14,7 @@
 
 
 class Screen;
+class Ball;
 
 
 enum PaddleDirection
@@ -31,8 +32,10 @@ public:
 	static const uint32_t PADDLE_HEIGHT = 10;
 
 	void Init(const AARectangle& rect, const AARectangle& boundary);
-	void Update(uint32_t dt);
+	void Update(uint32_t dt, Ball& ball);
 	void Draw(Screen& screen);
+
+	bool Bounce(Ball& ball);
 
 	inline bool IsMovingLeft() const {return mDirection == PaddleDirection::LEFT;}
 	inline bool IsMovingRight() const {return mDirection == PaddleDirection::RIGHT;}
@@ -49,6 +52,8 @@ private:
 	AARectangle mBoundary; //boundary that the paddle is confined to
 
 	const float VELOCITY = 100.0f; //pixels/second
+
+	const float CORNER_BOUNCE_AMT = 0.2f;
 };
 
 
