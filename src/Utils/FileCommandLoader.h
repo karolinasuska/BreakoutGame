@@ -46,7 +46,7 @@ class FileCommandLoader
 {
 public:
 
-	void AddCommadn(const Command& command);
+	void AddCommand(const Command& command);
 	bool LoadFile(const std::string& filePath);
 
 	static Color ReadColor(const ParseFuncParams& params);
