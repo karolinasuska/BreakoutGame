@@ -36,11 +36,17 @@ public:
 
 private:
 
-	void ResetGame();
+	const int NUM_LIVES = 3;
+
+	void ResetGame(size_t toLevel = 0);
 
 	BreakoutGameLevel& GetCurrentLevel() {return mLevels[mCurrentLevel];}
 
 	void SetToServeState();
+
+	bool IsBallPassedCutoffY() const;
+	void ReduceLifeByOne();
+	bool IsGameOver() const {return mLives < 0;}
 
 	const float INITIAL_BALL_SPEED = 100;
 	const Vec2D INITIAL_BALL_VEL = Vec2D(100, -100);
@@ -51,6 +57,8 @@ private:
 	std::vector<BreakoutGameLevel> mLevels;
 	size_t mCurrentLevel;
 	BreakOutGameState mGameState;
+	int mLives;
+	float mYCutoff;
 
 };
 

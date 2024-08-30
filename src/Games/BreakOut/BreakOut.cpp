@@ -8,6 +8,7 @@
 #include "BreakOut.h"
 #include "GameController.h"
 #include "App.h"
+#include "Circle.h"
 
 #include <iostream>
 
@@ -47,6 +48,7 @@
 void BreakOut::Init(GameController& controller)
 {
 	controller.ClearAll();
+
 	ResetGame();
 
 	ButtonAction serveAction;
@@ -149,9 +151,26 @@ void BreakOut::Update(uint32_t dt)
 		}
 
 		GetCurrentLevel().Update(dt, mBall);
+
+		if(IsBallPassedCutoffY())
+		{
+			ReduceLifeByOne();
+			if(!IsGameOver())
+			{
+				SetToServeState();
+			}
+			else
+			{
+				mGameState = IN_GAME_OVER;
+			}
+		}
+		else if(GetCurrentLevel().IsLevelComplete())
+		{
+			mCurrentLevel = (mCurrentLevel + 1) % mLevels.size();
+			ResetGame(mCurrentLevel);
+		}
 	}
 }
-
 
 
 
@@ -161,6 +180,14 @@ void BreakOut::Draw(Screen& screen)
 	mPaddle.Draw(screen);
 	GetCurrentLevel().Draw(screen);
 	screen.Draw(mLevelBoundary.GetAARectangle(), Color::White());
+
+	Circle lifeCircle = {Vec2D(7, App::Singleton().Height() - 10), 5};
+
+	for(int i = 0; i < mLives; ++i)
+	{
+		screen.Draw(lifeCircle, Color::Red(), true, Color::Red());
+		lifeCircle.MoveBy(Vec2D(17, 0));
+	}
 }
 
 
@@ -174,10 +201,13 @@ const std::string& BreakOut::GetName() const
 
 
 
-void BreakOut::ResetGame()
+void BreakOut::ResetGame(size_t toLevel)
 {
 	mLevels = BreakoutGameLevel::LoadLevelsFromFile(App::GetBasePath() + "Assets/BreakoutLevels.txt");
+	mYCutoff = App::Singleton().Height() - 2*Paddle::PADDLE_HEIGHT;
+	mLives = NUM_LIVES;
 	mCurrentLevel = 0;
+
 	AARectangle paddleRect = {Vec2D(App::Singleton().Width()/2 - Paddle::PADDLE_WIDTH/2, App::Singleton().Height() - 3 * Paddle::PADDLE_HEIGHT), Paddle::PADDLE_WIDTH, Paddle::PADDLE_HEIGHT};
 	AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
 
@@ -190,12 +220,31 @@ void BreakOut::ResetGame()
 
 }
 
+
+
 void BreakOut::SetToServeState()
 {
 	mGameState = IN_SERVE;
 	mBall.Stop();
 
 	mBall.MoveTo(Vec2D(mPaddle.GetAARectangle().GetCenterPoint().GetX(), mPaddle.GetAARectangle().GetTopLeftPoint().GetY() - mBall.GetRadius() - 1));
+}
+
+
+
+bool BreakOut::IsBallPassedCutoffY() const
+{
+	return mBall.GetPosition().GetY() > mYCutoff;
+}
+
+
+
+void BreakOut::ReduceLifeByOne()
+{
+	if(mLives >= 0)
+	{
+		--mLives;
+	}
 }
 
 

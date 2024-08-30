@@ -42,7 +42,7 @@ void Ball::MakeFlushWithEdge(const BoundaryEdge& edge, Vec2D pointOnEdge, bool l
 {
 	if(edge.normal == DOWN_DIR)
 	{
-		mBBox.MoveTo(Vec2D(mBBox.GetTopLeftPoint().GetX(), edge.edge.GetP0().GetY() + edge.normal.GetY()));
+		mBBox.MoveTo(Vec2D(mBBox.GetTopLeftPoint().GetX(), edge.edge.GetP0().GetY() + mBBox.GetHeight()));
 	}
 	else if(edge.normal == UP_DIR)
 	{

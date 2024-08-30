@@ -21,8 +21,8 @@ enum EdgeType
 	NUM_EDGES
 };
 
-static const Vec2D UP_DIR = {0, -1};
-static const Vec2D DOWN_DIR = {0, 1};
+static const Vec2D UP_DIR = {0, 1};
+static const Vec2D DOWN_DIR = {0, -1};
 static const Vec2D LEFT_DIR = {-1, 0};
 static const Vec2D RIGHT_DIR = {1, 0};
 

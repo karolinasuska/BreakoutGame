@@ -88,7 +88,7 @@ bool Paddle::Bounce(Ball& ball)
 
 			float tx = (pointOnEdge.GetX() - edge.edge.GetP0().GetX())/edgeLength;
 
-			if(((tx <= CORNER_BOUNCE_AMT) && ball.GetVelocity().GetX() > 0) || (tx >= (1.0f - CORNER_BOUNCE_AMT) && ball.GetVelocity().GetX() <0))
+			if(((tx <= CORNER_BOUNCE_AMT) && ball.GetVelocity().GetX() > 0) || (tx >= (1.0f - CORNER_BOUNCE_AMT) && ball.GetVelocity().GetX() < 0))
 			{
 				ball.SetVelocity(-ball.GetVelocity());
 				return true;
