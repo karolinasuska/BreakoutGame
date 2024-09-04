@@ -23,9 +23,9 @@ Breakout Game is a classic arcade-style game developed in C++ that challenges pl
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level1_screenshot.png" alt="Level 3 Screenshot" width="25%">
-  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level2_screenshot.png" alt="Level 4 Screenshot" width="25%">
-  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level3_screenshot.png" alt="Level 4 Screenshot" width="25%">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level1_screenshot.png" alt="Level 3 Screenshot" width="30%">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level2_screenshot.png" alt="Level 4 Screenshot" width="30%">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level3_screenshot.png" alt="Level 4 Screenshot" width="30%">
 </p>
 
 &nbsp;
