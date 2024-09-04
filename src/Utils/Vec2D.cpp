@@ -22,6 +22,8 @@ std::ostream& operator<<(std::ostream& consoleOut, const Vec2D& vec)
 	return consoleOut;
 }
 
+
+
 Vec2D operator*(float scalar, const Vec2D& vec)
 {
 	return vec * scalar;
@@ -112,6 +114,7 @@ float Vec2D::Magnitude2() const
 	return Dot(*this);
 }
 
+
 float Vec2D::Magnitude() const
 {
 	return sqrt(Magnitude2());
@@ -150,6 +153,7 @@ float Vec2D::Distance(const Vec2D& vec) const
 	return (vec - *this).Magnitude();
 }
 
+
 float Vec2D::Dot(const Vec2D& vec) const
 {
 	return mX * vec.mX + mY * vec.mY;
@@ -163,9 +167,8 @@ Vec2D Vec2D::ProjectOnto(const Vec2D& vec) const
 {
 	Vec2D unitVec2 = vec.GetUnitVec();
 
-	float dot = Dot(vec);
+	float dot = Dot(unitVec2);
 
-	//(v dot n)n
 	return unitVec2 * dot;
 }
 

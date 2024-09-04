@@ -71,7 +71,7 @@ Vec2D Excluder::GetCollisionOffset(const AARectangle& rect) const
 
 	if(HasCollided(rect, edge))
 	{
-		float yMin = mAARect.GetTopLeftPoint().GetY() >= rect.GetTopLeftPoint().GetY() ? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
+		float yMin = mAARect.GetTopLeftPoint().GetY() >= (rect.GetTopLeftPoint().GetY()) ? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
 		float yMax = mAARect.GetBottomRightPoint().GetY() <= rect.GetBottomRightPoint().GetY() ? mAARect.GetBottomRightPoint().GetY() : rect.GetBottomRightPoint().GetY();
 
 		float ySize = yMax - yMin;

@@ -67,7 +67,7 @@ void BreakOut::Init(GameController& controller)
 					}
 					else
 					{
-						mBall.SetVelocity(Vec2D(INITIAL_BALL_SPEED, INITIAL_BALL_SPEED));
+						mBall.SetVelocity(Vec2D(INITIAL_BALL_SPEED, -INITIAL_BALL_SPEED));
 					}
 				}
 			}
@@ -206,7 +206,7 @@ void BreakOut::ResetGame(size_t toLevel)
 	mLevels = BreakoutGameLevel::LoadLevelsFromFile(App::GetBasePath() + "Assets/BreakoutLevels.txt");
 	mYCutoff = App::Singleton().Height() - 2*Paddle::PADDLE_HEIGHT;
 	mLives = NUM_LIVES;
-	mCurrentLevel = 0;
+	mCurrentLevel = toLevel;
 
 	AARectangle paddleRect = {Vec2D(App::Singleton().Width()/2 - Paddle::PADDLE_WIDTH/2, App::Singleton().Height() - 3 * Paddle::PADDLE_HEIGHT), Paddle::PADDLE_WIDTH, Paddle::PADDLE_HEIGHT};
 	AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
