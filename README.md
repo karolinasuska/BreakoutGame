@@ -20,6 +20,22 @@ Breakout Game is a classic arcade-style game developed in C++ that challenges pl
 
 &nbsp;
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level1_screenshot.png" alt="Level 3 Screenshot" width="33%">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level2_screenshot.png" alt="Level 4 Screenshot" width="33%">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/level3_screenshot.png" alt="Level 4 Screenshot" width="33%">
+</p>
+
+&nbsp;
+
+## 🎥 Video
+
+
+
+&nbsp;
+
 ## 💿 Installation
 
 1. Clone this repository to your local machine:
@@ -38,4 +54,4 @@ I plan to expand this project into a comprehensive Arcade Game App that will inc
 &nbsp;
 
 ## 🙋🏻‍♀️ Feel free to contact me
-If you encounter any issues or have questions, please feel free to contact me via [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karolina1101suska@gmail.com) or [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logo
+If you encounter any issues or have questions, please feel free to contact me via [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karolina1101suska@gmail.com) or [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/karolinasuska)
