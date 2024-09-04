@@ -1,17 +1,41 @@
-# ArcadeGameApp
+# 🎮 Breakout Game
 
-ArcadeGameApp is a simple SDL2-based application that prints "Hello World" to the console.
+Breakout Game is a classic arcade-style game developed in C++ that challenges players to destroy bricks using a ball and paddle. The game features dynamic levels with varying brick layouts and colors.
 
-## Getting Started
+**🚀 Main Features**:
+- Unique brick arrangements and colors for each level.
+- Different hit requirements for each brick color.
+- Levels are loaded from a .txt file.
+- Player has 3 lives to complete the levels.
+- Interactive and engaging gameplay.
 
-To build and run the application, ensure you have SDL2 installed and follow the build instructions.
+&nbsp;
 
-## Prerequisites
+## 💡 Technologies
 
-- SDL2 library
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## Build Instructions
+&nbsp;
 
-```bash
-g++ -I/Library/Frameworks/SDL2.framework/Versions/A/Headers -o ArcadeGameApp src/ArcadeGameApp.cpp -F/Library/Frameworks -framework SDL2
+## 💿 Installation
 
+1. Clone this repository to your local machine:
+    ```bash
+    git clone https://github.com/kSuska1/BreakoutGame.git
+    ```
+2. Open the project in Eclipse.
+3. Build the project and run the executable to start playing the game.
+
+&nbsp;
+
+## 🌟 Future Plans
+
+I plan to expand this project into a comprehensive Arcade Game App that will include multiple games, providing a broader range of classic arcade experiences. This will involve adding new games, refining the user interface, and integrating more advanced features to enhance the overall gaming experience. Stay tuned for updates as the project evolves!
+
+&nbsp;
+
+## 🙋🏻‍♀️ Feel free to contact me
+If you encounter any issues or have questions, please feel free to contact me via [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karolina1101suska@gmail.com) or [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logo
