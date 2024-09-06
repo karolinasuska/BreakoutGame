@@ -1,12 +1,12 @@
 # 🎮 Breakout Game
 
-Breakout Game is a classic arcade-style game developed in C++ that challenges players to destroy bricks using a ball and paddle. The game features dynamic levels with varying brick layouts and colors.
+Breakout Game is a classic arcade-style game developed in C++ using the SDL2 library, that challenges players to destroy bricks using a ball and paddle. The game features dynamic levels with varying brick layouts and colors.
 
 **🚀 Main Features**:
 - Unique brick arrangements and colors for each level.
 - Different hit requirements for each brick color.
 - Levels are loaded from a .txt file.
-- Player has 3 lives to complete the levels.
+- Player has 4 lives to complete the levels.
 - Interactive and engaging gameplay.
 
 &nbsp;
@@ -14,6 +14,7 @@ Breakout Game is a classic arcade-style game developed in C++ that challenges pl
 ## 💡 Technologies
 
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![SDL2](https://img.shields.io/badge/SDL2-%234d4d4d.svg?style=for-the-badge&logo=SDL&logoColor=white)
 ![Eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
@@ -30,8 +31,11 @@ Breakout Game is a classic arcade-style game developed in C++ that challenges pl
 
 &nbsp;
 
-## 🎥 Video
+## 🎥 Gameplay video
 
+<div align="center">
+  <img src="https://github.com/kSuska1/BreakoutGame/blob/master/src/Assets/breakout_game-gameplay-video.gif" alt="Gameplay Video" width="400">
+</div>
 
 &nbsp;
 
