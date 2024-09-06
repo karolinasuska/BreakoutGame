@@ -1,6 +1,6 @@
 # 🎮 Breakout Game
 
-Breakout Game is a classic arcade-style game developed in C++ using the SDL2 library, that challenges players to destroy bricks using a ball and paddle. The game features dynamic levels with varying brick layouts and colors.
+**Breakout Game** is a classic arcade-style game developed in C++ using the **SDL2 library**, that challenges players to destroy bricks using a ball and paddle. The game features dynamic levels with varying brick layouts and colors.
 
 **🚀 Main Features**:
 - Unique brick arrangements and colors for each level.
